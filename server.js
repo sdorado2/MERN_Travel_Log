@@ -1,4 +1,5 @@
 require("dotenv").config();
+require("./mongoose");
 const express = require("express");
 const app = express();
 const PORT = 3000;
@@ -17,5 +18,7 @@ app.get("/", (req, res) => {
 app.get("/new", (req, res) => {
   res.render("new");
 });
+
+app.post("/", (req, res) => {});
 
 app.listen(PORT, () => console.log(`Listening @ ${PORT}`));
