@@ -8,15 +8,20 @@ class New extends React.Component {
         <a href="/">Back</a>
         <h1>New Page</h1>
 
-        <form>
-          Image URL : <input type="url" />
+        <form action="/" method="POST">
+          Image URL : <input type="url" name="img" required={true} />
           <br />
-          Title : <input type="text" required={true} />
+          Title : <input type="text" name="title" required={true} />
           <br />
-          Date : <input type="date" required={true} />
+          Date : <input type="date" name="date" required={true} />
           <br />
           <p>Summary : </p>
-          <textarea maxLength="240" minLength="10" required={true}></textarea>
+          <textarea
+            maxLength="240"
+            minLength="10"
+            name="summary"
+            required={true}
+          ></textarea>
           <br />
           <input type="submit" value="Submit" />
         </form>

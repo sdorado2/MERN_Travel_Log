@@ -3,9 +3,11 @@ require("./mongoose");
 const express = require("express");
 const app = express();
 const PORT = 3000;
+const Travel = require("./models/logEntry");
 
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
+app.use(express.urlencoded({ extended: true }));
 
 // app.get("/", (req, res) => {
 //   res.send(`Testing`);
@@ -19,6 +21,11 @@ app.get("/new", (req, res) => {
   res.render("new");
 });
 
-app.post("/", (req, res) => {});
+app.post("/", (req, res) => {
+  Travel.create(req.body, (error, createTravel) => {
+    console.log("🚀  file: server.js:25  Log.create  createLog:", createTravel);
+    res.redirect("/");
+  });
+});
 
 app.listen(PORT, () => console.log(`Listening @ ${PORT}`));
