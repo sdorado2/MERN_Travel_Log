@@ -14,4 +14,8 @@ app.get("/", (req, res) => {
   res.render("Index");
 });
 
+app.get("/new", (req, res) => {
+  res.render("new");
+});
+
 app.listen(PORT, () => console.log(`Listening @ ${PORT}`));
