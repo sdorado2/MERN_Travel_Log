@@ -5,6 +5,7 @@ class New extends React.Component {
   render() {
     return (
       <DefaultLayout>
+        <a href="/">Back</a>
         <h1>New Page</h1>
 
         <form>

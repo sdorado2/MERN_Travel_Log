@@ -6,6 +6,7 @@ class Index extends React.Component {
     return (
       <DefaultLayout>
         <h1>Index Page</h1>
+        <a href="/new">Add New</a>
       </DefaultLayout>
     );
   }
