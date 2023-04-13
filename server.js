@@ -14,11 +14,13 @@ app.use(express.urlencoded({ extended: true }));
 // });
 
 app.get("/", (req, res) => {
-  res.render("Index");
+  Travel.find({}, (error, allTravels) =>
+    res.render("Index", { log: allTravels })
+  );
 });
 
 app.get("/new", (req, res) => {
-  res.render("new");
+  res.render("New");
 });
 
 app.post("/", (req, res) => {
