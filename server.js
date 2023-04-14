@@ -30,4 +30,11 @@ app.post("/", (req, res) => {
   });
 });
 
+app.get("/:id", (req, res) => {
+  Travel.findById(req.params.id, (error, findTravel) => {
+    res.render("Show");
+  });
+});
+
 app.listen(PORT, () => console.log(`Listening @ ${PORT}`));
+blank;
