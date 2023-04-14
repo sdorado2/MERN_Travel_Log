@@ -36,4 +36,10 @@ app.get("/:id", (req, res) => {
   });
 });
 
+app.get("/:id/edit", (req, res) => {
+  Travel.findByIdAndUpdate(req.params.id, (error, foundTravel) => {
+    res.render("Edit");
+  });
+});
+
 app.listen(PORT, () => console.log(`Listening @ ${PORT}`));
