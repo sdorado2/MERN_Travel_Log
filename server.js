@@ -37,8 +37,10 @@ app.get("/:id", (req, res) => {
 });
 
 app.get("/:id/edit", (req, res) => {
-  Travel.findByIdAndUpdate(req.params.id, (error, foundTravel) => {
-    res.render("Edit");
+  Travel.findById(req.params.id, (error, foundTravel) => {
+    !error
+      ? res.render("Edit", { log: foundTravel })
+      : res.send({ msg: error.message });
   });
 });
 

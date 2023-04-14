@@ -16,6 +16,9 @@ class Index extends React.Component {
                 <a href={`/${entry._id}`}>{entry.title}</a>
               </h1>
               <time>Visited : {new Date(entry.date).toDateString()}</time>
+              <form>
+                <a href={`/${entry._id}/edit`}>Edit</a>
+              </form>
             </div>
           );
         })}
