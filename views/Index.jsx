@@ -12,7 +12,9 @@ class Index extends React.Component {
           return (
             <div>
               {/* <img src={entry.img} alt="image" /> */}
-              <h1>{entry.title}</h1>
+              <h1>
+                <a href={`/${entry._id}`}>{entry.title}</a>
+              </h1>
               <time>Visited : {new Date(entry.date).toDateString()}</time>
             </div>
           );
