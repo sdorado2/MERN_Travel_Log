@@ -10,7 +10,7 @@ class DefaultLayout extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <title>Document</title>
+          <title>{this.props.title}</title>
         </head>
         <body>{this.props.children}</body>
       </html>
