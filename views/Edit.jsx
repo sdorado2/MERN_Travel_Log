@@ -6,7 +6,7 @@ class Edit extends React.Component {
     const log = this.props.log;
     return (
       <DefaultLayout>
-        <form>
+        <form action={`/${log._id}?_method=PUT`} method="POST">
           Image URL :{" "}
           <input type="url" name="img" defaultValue={log.img} required={true} />
           <br />

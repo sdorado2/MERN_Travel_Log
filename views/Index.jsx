@@ -19,6 +19,9 @@ class Index extends React.Component {
               <form>
                 <a href={`/${entry._id}/edit`}>Edit</a>
               </form>
+              <form action={`/${entry._id}?_method=delete`} method="POST">
+                <input type="submit" value="delete" />
+              </form>
             </div>
           );
         })}

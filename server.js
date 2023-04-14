@@ -1,6 +1,7 @@
 require("dotenv").config();
 require("./mongoose");
 const express = require("express");
+const methodOverride = require("method-override");
 const app = express();
 const PORT = 3000;
 const Travel = require("./models/logEntry");
@@ -8,6 +9,7 @@ const Travel = require("./models/logEntry");
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 // app.get("/", (req, res) => {
 //   res.send(`Testing`);
@@ -41,6 +43,19 @@ app.get("/:id/edit", (req, res) => {
     !error
       ? res.render("Edit", { log: foundTravel })
       : res.send({ msg: error.message });
+  });
+});
+
+app.put("/:id", (req, res) => {
+  Travel.findByIdAndUpdate(req.params.id, req.body, (error, updateTravel) => {
+    console.log(updateTravel);
+    res.redirect(`/${req.params.id}`);
+  });
+});
+
+app.delete("/:id", (req, res) => {
+  Travel.findByIdAndRemove(req.params.id, (error, deleteTravel) => {
+    res.redirect("/");
   });
 });
 
