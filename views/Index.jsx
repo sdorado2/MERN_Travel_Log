@@ -9,7 +9,13 @@ class Index extends React.Component {
         <h1>Index Page</h1>
         <a href="/new">Add New</a>
         {travel.map((entry) => {
-          return <h1>{entry.title}</h1>;
+          return (
+            <div>
+              {/* <img src={entry.img} alt="image" /> */}
+              <h1>{entry.title}</h1>
+              <time>Visited : {new Date(entry.date).toDateString()}</time>
+            </div>
+          );
         })}
       </DefaultLayout>
     );
