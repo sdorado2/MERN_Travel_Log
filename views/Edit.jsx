@@ -37,6 +37,9 @@ class Edit extends React.Component {
           <br />
           <input type="submit" value="Update" />
         </form>
+        <a href="/">
+          <button>Back</button>
+        </a>
       </DefaultLayout>
     );
   }

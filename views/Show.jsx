@@ -9,7 +9,13 @@ class Show extends React.Component {
         <h1>Show Page</h1>
         <img src={log.img} alt="image" />
         <h2>{log.summary}</h2>
-        <a href="/">Back</a>
+
+        <a href="/">
+          <button>Back</button>
+        </a>
+        <form action={`/${log._id}?_method=delete`} method="POST">
+          <input type="submit" value="delete" />
+        </form>
       </DefaultLayout>
     );
   }
