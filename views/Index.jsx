@@ -10,7 +10,7 @@ class Index extends React.Component {
         <a href="/new">Add New</a>
         {travel.map((entry) => {
           return (
-            <div>
+            <div key={entry._id}>
               {/* <img src={entry.img} alt="image" /> */}
               <h1>
                 <a href={`/${entry._id}`}>{entry.title}</a>

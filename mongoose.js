@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const mongoURI = process.env.MONGO_URI;
 const db = mongoose.connection;
 
-mongoose.connect(mongoURI, { useUnifiedTopology: true });
 mongoose.set("strictQuery", true);
+mongoose.connect(mongoURI, { useUnifiedTopology: true });
 
 db.on("open", () => console.log(`mongo connected :${mongoURI}`));
 db.on("close", () => console.log(`mongo disconnected`));
