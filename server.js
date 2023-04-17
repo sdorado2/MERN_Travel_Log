@@ -5,7 +5,6 @@ const methodOverride = require("method-override");
 const app = express();
 const PORT = 3000;
 const userRoute = require("./routes/User");
-const Travel = require("./models/logEntry");
 
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
