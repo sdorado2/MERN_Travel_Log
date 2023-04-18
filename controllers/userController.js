@@ -21,7 +21,7 @@ const createNewLog = async (req, res) => {
     title: req.body.title,
     date: req.body.date,
     summary: req.body.summary,
-    geo: req.body,
+    geo: Location._id,
   });
 
   const area = await Location.create({
