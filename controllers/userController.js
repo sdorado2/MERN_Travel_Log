@@ -14,11 +14,14 @@ const createNewLog = async (req, res) => {
   //   console.log("🚀  file: server.js:25  Log.create  createLog:", createTravel);
   //   res.redirect("/");
   // });
+  console.log(req.body);
+
   const travel = await Travel.create({
     img: req.body.img,
     title: req.body.title,
     date: req.body.date,
     summary: req.body.summary,
+    geo: req.body,
   });
 
   const area = await Location.create({
