@@ -1,4 +1,5 @@
 const Travel = require("../models/logEntry");
+const Location = require("../models/location");
 
 const getAllLogs = (req, res) => {
   Travel.find({}, (error, allTravels) =>
