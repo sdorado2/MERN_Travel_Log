@@ -21,11 +21,12 @@ const createNewLog = async (req, res) => {
     summary: req.body.summary,
   });
 
-  const location = await Location.create({
+  const area = await Location.create({
+    city: req.body.city,
     country: req.body.country,
   });
 
-  console.log(`results for travel : ${travel} and ${location}`);
+  console.log(`results for travel : ${travel} and \narea : ${area}`);
 
   res.redirect("/");
 };
