@@ -14,14 +14,14 @@ const createNewLog = async (req, res) => {
   //   res.redirect("/");
   // });
   const travel = await Travel.create({
-    img: img,
-    title: title,
-    date: date,
-    summary: summary,
+    img: req.body.img,
+    title: req.body.title,
+    date: req.body.date,
+    summary: req.body.summary,
   });
 
   const location = await Location.create({
-    country: country,
+    country: req.body.country,
   });
 
   console.log(`results for travel : ${travel} and ${location}`);
