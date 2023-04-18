@@ -8,11 +8,25 @@ const getAllLogs = (req, res) => {
 
 const newLogPage = (req, res) => res.render("New");
 
-const createNewLog = (req, res) => {
-  Travel.create(req.body, (error, createTravel) => {
-    console.log("🚀  file: server.js:25  Log.create  createLog:", createTravel);
-    res.redirect("/");
+const createNewLog = async (req, res) => {
+  // Travel.create(req.body, (error, createTravel) => {
+  //   console.log("🚀  file: server.js:25  Log.create  createLog:", createTravel);
+  //   res.redirect("/");
+  // });
+  const travel = await Travel.create({
+    img: img,
+    title: title,
+    date: date,
+    summary: summary,
   });
+
+  const location = await Location.create({
+    country: country,
+  });
+
+  console.log(`results for travel : ${travel} and ${location}`);
+
+  res.redirect("/");
 };
 
 const findLog = (req, res) => {
