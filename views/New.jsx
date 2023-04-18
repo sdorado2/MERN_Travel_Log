@@ -23,6 +23,7 @@ class New extends React.Component {
             required={true}
           ></textarea>
           <br />
+          City : <input type="text" name="city" required={true} />
           Country : <input type="text" name="country" required={true} />
           <input type="submit" value="Submit" />
         </form>
