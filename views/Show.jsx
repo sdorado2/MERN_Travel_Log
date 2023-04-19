@@ -4,6 +4,7 @@ const DefaultLayout = require("./layout/Default");
 class Show extends React.Component {
   render() {
     const log = this.props.log;
+    console.log(`Show GEO :${log.geo}`);
     return (
       <DefaultLayout title={log.title}>
         <h1>Show Page</h1>
