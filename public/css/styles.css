@@ -53,7 +53,6 @@ body {
   width: 350px;
   height: 120px;
 }
-
 .newBack {
   margin-top: 0.6rem;
 }
@@ -62,4 +61,11 @@ body {
   display: flex;
   flex-flow: column wrap;
   gap: 0.6vmin;
+}
+.editForm textarea {
+  width: 350px;
+  height: 120px;
+}
+.editBack {
+  margin-top: 0.6rem;
 }

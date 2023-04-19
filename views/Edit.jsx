@@ -38,7 +38,7 @@ class Edit extends React.Component {
           ></textarea>
           <input type="submit" value="Update" />
         </form>
-        <a href="/">
+        <a className="editBack" href="/">
           <button>Back</button>
         </a>
       </DefaultLayout>
