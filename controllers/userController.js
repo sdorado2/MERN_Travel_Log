@@ -43,6 +43,7 @@ const createNewLog = async (req, res) => {
       console.log(response);
       area.latitude = response[0].lat;
       area.longitude = response[0].lon;
+      await area.save();
     };
 
     getCoord();
@@ -50,7 +51,6 @@ const createNewLog = async (req, res) => {
     travel.geo.push(area._id);
 
     await travel.save();
-    await area.save();
 
     console.log(`results for travel : ${travel} and \narea : ${area}`);
     console.log(`area lat : ${area.latitude} and long : ${area.longitude} `);
