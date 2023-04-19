@@ -1,5 +1,7 @@
 const Travel = require("../models/logEntry");
 const Location = require("../models/location");
+const axios = require("axios");
+const { response } = require("express");
 
 const getAllLogs = (req, res) => {
   Travel.find({}, (error, allTravels) =>
@@ -28,6 +30,17 @@ const createNewLog = async (req, res) => {
       city: req.body.city,
       country: req.body.country,
     });
+
+    const getCoord = async () => {
+      const response = await axios
+        .get(`https://geocode.maps.co/search?q=${area.city}+${country}`)
+        .then((res) => {
+          console.log(`response : ${response}`);
+          return res.data;
+        });
+    };
+
+    getCoord();
 
     travel.geo.push(area._id);
 
