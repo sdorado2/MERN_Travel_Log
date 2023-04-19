@@ -33,6 +33,8 @@ const createNewLog = async (req, res) => {
 
     console.log(`area country : ${typeof area.country}`);
 
+    const data = [];
+
     const getCoord = async () => {
       const response = await axios
         .get(`https://geocode.maps.co/search?q=${area.city}+${area.country}`)
@@ -41,9 +43,16 @@ const createNewLog = async (req, res) => {
           return res.data;
         });
       console.log(response);
+      data = response;
+
+      console.log(`area lat : ${area.latitude} and long : ${area.longitude} `);
     };
 
     getCoord();
+
+    area.latitude.push(data[0].lat);
+
+    await area.save();
 
     travel.geo.push(area._id);
 
