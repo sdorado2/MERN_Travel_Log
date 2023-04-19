@@ -57,3 +57,9 @@ body {
 .newBack {
   margin-top: 0.6rem;
 }
+
+.editForm {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.6vmin;
+}

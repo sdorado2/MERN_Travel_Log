@@ -6,10 +6,14 @@ class Edit extends React.Component {
     const log = this.props.log;
     return (
       <DefaultLayout>
-        <form action={`/${log._id}?_method=PUT`} method="POST">
+        <h1>Edit - Page</h1>
+        <form
+          className="editForm"
+          action={`/${log._id}?_method=PUT`}
+          method="POST"
+        >
           Image URL :{" "}
           <input type="url" name="img" defaultValue={log.img} required={true} />
-          <br />
           Title :{" "}
           <input
             type="text"
@@ -17,7 +21,6 @@ class Edit extends React.Component {
             defaultValue={log.title}
             required={true}
           />
-          <br />
           Date :{" "}
           <input
             type="date"
@@ -25,7 +28,6 @@ class Edit extends React.Component {
             defaultValue={log.date}
             required={true}
           />
-          <br />
           Summary :
           <textarea
             defaultValue={log.summary}
@@ -34,7 +36,6 @@ class Edit extends React.Component {
             name="summary"
             required={true}
           ></textarea>
-          <br />
           <input type="submit" value="Update" />
         </form>
         <a href="/">

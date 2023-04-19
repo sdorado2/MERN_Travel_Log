@@ -11,7 +11,7 @@ class DefaultLayout extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           <title>{this.props.title}</title>
-          <link rel="stylesheet" type="text/css" href="css/styles.css" />
+          <link rel="stylesheet" type="text/css" href="/css/styles.css" />
         </head>
         <body>
           <div className="navBar">
