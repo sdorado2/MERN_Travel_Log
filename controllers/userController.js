@@ -33,20 +33,30 @@ const createNewLog = async (req, res) => {
 
     console.log(`area country : ${typeof area.country}`);
 
-    const getCoord = async () => {
-      const response = await axios
-        .get(`https://geocode.maps.co/search?q=${area.city}+${area.country}`)
-        .then((res) => {
-          console.log(`response : ${res.data}`);
-          return res.data;
-        });
-      console.log(response);
-      area.latitude = response[0].lat;
-      area.longitude = response[0].lon;
-      await area.save();
-    };
+    const response = await axios
+      .get(`https://geocode.maps.co/search?q=${area.city}+${area.country}`)
+      .then((res) => {
+        console.log(`response : ${res.data}`);
+        return res.data;
+      });
+    console.log(response);
+    area.latitude = response[0].lat;
+    area.longitude = response[0].lon;
+    await area.save();
 
-    getCoord();
+    const getWeather = await axios
+      .get(
+        `https://archive-api.open-meteo.com/v1/archive?latitude=${area.latitude}&longitude=${area.longitude}&start_date=${travel.date}&end_date=${travel.date}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=America%2FNew_York`
+      )
+      .then((res) => {
+        return res.data;
+      });
+
+    console.log(getWeather);
+
+    // const weather = await Weather.create({
+
+    // })
 
     travel.geo.push(area._id);
 
