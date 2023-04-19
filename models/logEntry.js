@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Location = require("./location");
 
 const logSchema = new mongoose.Schema(
   {
