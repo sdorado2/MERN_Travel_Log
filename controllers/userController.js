@@ -31,13 +31,16 @@ const createNewLog = async (req, res) => {
       country: req.body.country,
     });
 
+    console.log(`area country : ${typeof area.country}`);
+
     const getCoord = async () => {
       const response = await axios
-        .get(`https://geocode.maps.co/search?q=${area.city}+${country}`)
+        .get(`https://geocode.maps.co/search?q=${area.city}+${area.country}`)
         .then((res) => {
-          console.log(`response : ${response}`);
+          console.log(`response : ${res.data}`);
           return res.data;
         });
+      console.log(response);
     };
 
     getCoord();
