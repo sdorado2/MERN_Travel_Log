@@ -12,7 +12,9 @@ body {
 }
 
 .mainBox {
-  margin-left: 0.7rem;
+  margin: auto;
+  display: flex;
+  flex-flow: column wrap;
 }
 .index {
   border: solid red;
