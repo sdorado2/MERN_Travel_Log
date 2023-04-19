@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+}
+
+body {
+  display: flex;
+}
+
+.navBar {
+  border-right: 0.2rem solid black;
+}

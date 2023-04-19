@@ -11,8 +11,14 @@ class DefaultLayout extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           <title>{this.props.title}</title>
+          <link rel="stylesheet" type="text/css" href="css/styles.css" />
         </head>
-        <body>{this.props.children}</body>
+        <body>
+          <div className="navBar">
+            <h1>PostLog</h1>
+          </div>
+          <div className="mainContainer">{this.props.children}</div>
+        </body>
       </html>
     );
   }
