@@ -8,10 +8,13 @@ class Show extends React.Component {
     console.log(`Show GEO.Country :${log.geo[0].country}`);
     return (
       <DefaultLayout title={log.title}>
-        <h1>Show Page</h1>
+        <h1>{log.title}</h1>
         <img src={log.img} alt="image" className="logImg" />
-        <h2>{log.summary}</h2>
-        <h3>Country : {log.geo[0].country}</h3>
+
+        <h3>
+          Location : {log.geo[0].city}, {log.geo[0].country}
+        </h3>
+        <p>{log.summary}</p>
         <a href="/">
           <button>Back</button>
         </a>
