@@ -46,18 +46,16 @@ const createNewLog = async (req, res) => {
       console.log(response);
       lat = response[0].lat;
       console.log("🚀  file: userController.js:48  getCoord  lat:", lat);
-      lon = response[0].long;
+      lon = response[0].lon;
       console.log("🚀  file: userController.js:50  getCoord  lon:", lon);
     };
 
     getCoord();
 
     travel.geo.push(area._id);
+    area.latitude = lat;
 
     await travel.save();
-
-    area.latitude.push(data[0].lat);
-
     await area.save();
 
     console.log(`results for travel : ${travel} and \narea : ${area}`);
