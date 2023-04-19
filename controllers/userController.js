@@ -33,7 +33,8 @@ const createNewLog = async (req, res) => {
 
     console.log(`area country : ${typeof area.country}`);
 
-    const data = [];
+    let lat = "";
+    let lon = "";
 
     const getCoord = async () => {
       const response = await axios
@@ -43,26 +44,28 @@ const createNewLog = async (req, res) => {
           return res.data;
         });
       console.log(response);
-      data = response;
-
-      console.log(`area lat : ${area.latitude} and long : ${area.longitude} `);
+      lat = response[0].lat;
+      console.log("🚀  file: userController.js:48  getCoord  lat:", lat);
+      lon = response[0].long;
+      console.log("🚀  file: userController.js:50  getCoord  lon:", lon);
     };
 
     getCoord();
-
-    area.latitude.push(data[0].lat);
-
-    await area.save();
 
     travel.geo.push(area._id);
 
     await travel.save();
 
+    area.latitude.push(data[0].lat);
+
+    await area.save();
+
     console.log(`results for travel : ${travel} and \narea : ${area}`);
+    console.log(`area lat : ${area.latitude} and long : ${area.longitude} `);
 
     res.redirect("/");
   } catch (error) {
-    res.status.json({ message: error.message });
+    res.send({ message: error.message });
   }
 };
 
