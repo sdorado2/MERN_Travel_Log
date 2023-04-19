@@ -21,7 +21,6 @@ body {
   flex-flow: column wrap;
 }
 .index {
-  border: solid red;
   text-align: center;
 }
 .entry {
