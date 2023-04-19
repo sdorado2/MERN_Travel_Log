@@ -7,7 +7,7 @@ class Show extends React.Component {
     return (
       <DefaultLayout title={log.title}>
         <h1>Show Page</h1>
-        <img src={log.img} alt="image" />
+        <img src={log.img} alt="image" className="logImg" />
         <h2>{log.summary}</h2>
 
         <a href="/">

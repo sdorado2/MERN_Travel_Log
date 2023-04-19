@@ -17,8 +17,18 @@ body {
 
 .entry {
   border: solid lightgray;
+  margin: 1rem;
 }
 .entryOptions {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  padding-left: 0.3rem;
   display: flex;
-  gap: 5 vmin;
+  flex-flow: row nowrap;
+  gap: 3vmin;
+}
+
+.logImg {
+  width: 96dvw;
+  height: 54dvh;
 }
