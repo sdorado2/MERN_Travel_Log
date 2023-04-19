@@ -14,24 +14,31 @@ const createNewLog = async (req, res) => {
   //   console.log("🚀  file: server.js:25  Log.create  createLog:", createTravel);
   //   res.redirect("/");
   // });
-  console.log(req.body);
+  try {
+    console.log(req.body);
 
-  const travel = await Travel.create({
-    img: req.body.img,
-    title: req.body.title,
-    date: req.body.date,
-    summary: req.body.summary,
-    geo: Location._id,
-  });
+    const travel = await Travel.create({
+      img: req.body.img,
+      title: req.body.title,
+      date: req.body.date,
+      summary: req.body.summary,
+    });
 
-  const area = await Location.create({
-    city: req.body.city,
-    country: req.body.country,
-  });
+    const area = await Location.create({
+      city: req.body.city,
+      country: req.body.country,
+    });
 
-  console.log(`results for travel : ${travel} and \narea : ${area}`);
+    travel.geo.push(area._id);
 
-  res.redirect("/");
+    await travel.save();
+
+    console.log(`results for travel : ${travel} and \narea : ${area}`);
+
+    res.redirect("/");
+  } catch (error) {
+    res.status.json({ message: error.message });
+  }
 };
 
 const findLog = (req, res) => {
