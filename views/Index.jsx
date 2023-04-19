@@ -4,6 +4,7 @@ const DefaultLayout = require("./layout/Default");
 class Index extends React.Component {
   render() {
     const travel = this.props.log;
+    console.log(`Geo : ${typeof travel.geo}`);
     return (
       <DefaultLayout>
         <h1 className="index">Index Page</h1>

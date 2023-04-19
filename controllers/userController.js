@@ -4,7 +4,7 @@ const Location = require("../models/location");
 const getAllLogs = (req, res) => {
   Travel.find({}, (error, allTravels) =>
     res.render("Index", { log: allTravels })
-  ).populate(Location);
+  );
 };
 
 const newLogPage = (req, res) => res.render("New");
