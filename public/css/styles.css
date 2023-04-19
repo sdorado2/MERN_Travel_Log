@@ -49,6 +49,11 @@ body {
   flex-flow: column wrap;
   gap: 0.6vmin;
 }
+.newForm textarea {
+  width: 350px;
+  height: 120px;
+}
+
 .newBack {
   margin-top: 0.6rem;
 }
