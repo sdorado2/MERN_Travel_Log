@@ -14,7 +14,10 @@ body {
 .mainBox {
   margin-left: 0.7rem;
 }
-
+.index {
+  border: solid red;
+  text-align: center;
+}
 .entry {
   border: solid lightgray;
   margin: 1rem;
@@ -29,6 +32,8 @@ body {
 }
 
 .logImg {
-  width: 96dvw;
-  height: 54dvh;
+  border: solid black;
+  width: 85.4dvw;
+  height: 48dvh;
+  object-fit: fill;
 }
