@@ -7,7 +7,7 @@ class Index extends React.Component {
     return (
       <DefaultLayout>
         <h1 className="index">Index Page</h1>
-        <a href="/new">Add New</a>
+        {/* <a href="/new">Add New</a> */}
         {travel.map((entry) => {
           return (
             <div className="entry" key={entry._id}>

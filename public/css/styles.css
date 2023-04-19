@@ -8,7 +8,11 @@ body {
 
 .navBar {
   border-right: 0.1rem solid black;
-  padding-right: 0.7rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5vmin;
+  align-items: center;
 }
 
 .mainBox {
