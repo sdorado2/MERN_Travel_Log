@@ -7,5 +7,18 @@ body {
 }
 
 .navBar {
-  border-right: 0.2rem solid black;
+  border-right: 0.1rem solid black;
+  padding-right: 0.7rem;
+}
+
+.mainBox {
+  margin-left: 0.7rem;
+}
+
+.entry {
+  border: solid lightgray;
+}
+.entryOptions {
+  display: flex;
+  gap: 5 vmin;
 }

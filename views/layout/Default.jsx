@@ -17,7 +17,7 @@ class DefaultLayout extends React.Component {
           <div className="navBar">
             <h1>PostLog</h1>
           </div>
-          <div className="mainContainer">{this.props.children}</div>
+          <div className="mainBox">{this.props.children}</div>
         </body>
       </html>
     );
