@@ -8,11 +8,9 @@ class New extends React.Component {
         <a href="/">Back</a>
         <h1>New Page</h1>
 
-        <form action="/" method="POST">
+        <form className="newForm" action="/" method="POST">
           Image URL : <input type="url" name="img" required={true} />
-          <br />
           Title : <input type="text" name="title" required={true} />
-          <br />
           Date : <input type="date" name="date" required={true} />
           <br />
           <p>Summary : </p>
@@ -22,7 +20,6 @@ class New extends React.Component {
             name="summary"
             required={true}
           ></textarea>
-          <br />
           City : <input type="text" name="city" required={true} />
           Country : <input type="text" name="country" required={true} />
           <input type="submit" value="Submit" />

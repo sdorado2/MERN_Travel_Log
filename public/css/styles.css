@@ -43,3 +43,9 @@ body {
   height: 48dvh;
   object-fit: fill;
 }
+
+.newForm {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.6vmin;
+}
