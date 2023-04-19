@@ -5,7 +5,6 @@ class New extends React.Component {
   render() {
     return (
       <DefaultLayout>
-        <a href="/">Back</a>
         <h1>New Page</h1>
 
         <form className="newForm" action="/" method="POST">
@@ -24,6 +23,9 @@ class New extends React.Component {
           Country : <input type="text" name="country" required={true} />
           <input type="submit" value="Submit" />
         </form>
+        <a className="newBack" href="/">
+          <button>Back</button>
+        </a>
       </DefaultLayout>
     );
   }

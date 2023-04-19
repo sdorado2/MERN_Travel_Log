@@ -49,3 +49,6 @@ body {
   flex-flow: column wrap;
   gap: 0.6vmin;
 }
+.newBack {
+  margin-top: 0.6rem;
+}
