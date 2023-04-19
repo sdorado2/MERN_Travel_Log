@@ -69,3 +69,14 @@ body {
 .editBack {
   margin-top: 0.6rem;
 }
+.show {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2vmin;
+}
+
+.showOptions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1vmin;
+}
