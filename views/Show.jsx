@@ -16,6 +16,10 @@ class Show extends React.Component {
           <h3>
             Location : {log.geo[0].city}, {log.geo[0].country}
           </h3>
+          <h3>
+            Weather : {log.forecast[0].temperatureMax} &#176;C |{" "}
+            {log.forecast[0].temperatureMin} &#176;C
+          </h3>
           <p>{log.summary}</p>
         </div>
         <div className="showOptions">
