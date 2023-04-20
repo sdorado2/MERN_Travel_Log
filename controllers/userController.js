@@ -80,7 +80,9 @@ const createNewLog = async (req, res) => {
 const findLog = (req, res) => {
   Travel.findById(req.params.id, (error, foundTravel) => {
     res.render("Show", { log: foundTravel });
-  }).populate("geo", "weather");
+  })
+    .populate("geo")
+    .populate("forecast");
 };
 
 const editLog = (req, res) => {

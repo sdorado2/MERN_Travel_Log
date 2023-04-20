@@ -6,6 +6,7 @@ class Show extends React.Component {
     const log = this.props.log;
     console.log(`Show GEO :${log.geo}`);
     console.log(`Show GEO.Country :${log.geo[0].country}`);
+    console.log(`Show Weather : ${log.forecast}`);
     return (
       <DefaultLayout title={log.title}>
         <div className="show">
