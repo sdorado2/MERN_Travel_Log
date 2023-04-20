@@ -56,12 +56,13 @@ const createNewLog = async (req, res) => {
     console.log(`getWeather : ${getWeather}`);
 
     const weather = await Weather.create({
-      weathercode: getWeather.daily.weather[0],
+      weathercode: getWeather.daily.weathercode[0],
       temperatureMax: getWeather.daily.temperature_2m_max[0],
       temperatureMin: getWeather.daily.temperature_2m_min[0],
     });
 
     travel.geo.push(area._id);
+    travel.forecast.push(weather._id);
 
     await travel.save();
 
@@ -79,7 +80,7 @@ const createNewLog = async (req, res) => {
 const findLog = (req, res) => {
   Travel.findById(req.params.id, (error, foundTravel) => {
     res.render("Show", { log: foundTravel });
-  }).populate("geo");
+  }).populate("geo", "weather");
 };
 
 const editLog = (req, res) => {
