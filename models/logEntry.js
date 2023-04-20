@@ -7,6 +7,7 @@ const logSchema = new mongoose.Schema(
     date: { type: String, require: true },
     summary: { type: String, require: true },
     geo: [{ type: mongoose.Schema.Types.ObjectId, ref: "Location" }],
+    forecast: [{ type: mongoose.Schema.Types.ObjectId, ref: "Weather" }],
   },
   { timestamps: true }
 );
