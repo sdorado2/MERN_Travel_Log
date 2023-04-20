@@ -12,11 +12,11 @@ The main page would display all of the entries made thus far. If you click on th
 
 ## Tech Used
 
-- Mongo DB
-- Express JS
-- Node
-- React
++ Mongo DB
++ Express JS
++ Node
++ React
 
 ## API 
--https://geocode.maps.co/
--https://open-meteo.com/en/docs/historical-weather-api
++ https://geocode.maps.co/
++ https://open-meteo.com/en/docs/historical-weather-api
