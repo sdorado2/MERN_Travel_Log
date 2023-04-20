@@ -1,5 +1,6 @@
 const Travel = require("../models/logEntry");
 const Location = require("../models/location");
+const Weather = require("../models/weather");
 const axios = require("axios");
 const { response } = require("express");
 
@@ -52,17 +53,21 @@ const createNewLog = async (req, res) => {
         return res.data;
       });
 
-    console.log(getWeather);
+    console.log(`getWeather : ${getWeather}`);
 
-    // const weather = await Weather.create({
-
-    // })
+    const weather = await Weather.create({
+      weathercode: getWeather.daily.weather[0],
+      temperatureMax: getWeather.daily.temperature_2m_max[0],
+      temperatureMin: getWeather.daily.temperature_2m_min[0],
+    });
 
     travel.geo.push(area._id);
 
     await travel.save();
 
-    console.log(`results for travel : ${travel} and \narea : ${area}`);
+    console.log(
+      `results for travel : ${travel} and \narea : ${area}\nweather${weather}`
+    );
     console.log(`area lat : ${area.latitude} and long : ${area.longitude} `);
 
     res.redirect("/");
